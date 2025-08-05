@@ -1109,3 +1109,102 @@ This MCP implementation provides a complete solution for Vibe Coding with Knowle
 - **Vector Search**: Built-in vector search capabilities for similarity queries
 - **Full-Text Search**: Integrated full-text search functionality
 - **Easy Deployment**: Single executable with no external dependencies
+
+
+# ESTÁNDAR OBLIGATORIO DE COMENTARIOS PARA JAVASCRIPT
+
+**ANTES** de cada función, clase o bloque de código significativo, **DEBES** agregar un bloque de comentario contextual.
+
+## **Formato Exacto Obligatorio:**
+
+```javascript
+/**
+ * AGENT:      [Nombre del agente responsable, ej: api-service]
+ * TRACE:      [ID del Ticket/Issue, ej: FEAT-456. Si no hay: "N/A"]
+ * CONTEXT:    [Describe brevemente propósito y contexto del bloque/función]
+ * REASON:     [Explica razonamiento detrás de esta implementación específica]
+ * CHANGE:     [Si modificas código, describe el cambio. Si es nuevo: "Initial implementation."]
+ * PREVENTION: [Consideraciones clave o pitfalls potenciales para el futuro]
+ * RISK:       [Nivel de Riesgo (Low/Medium/High) y consecuencia si PREVENTION falla]
+ */
+```
+
+## **Ejemplos de Uso:**
+
+### Para Funciones:
+```javascript
+/**
+ * AGENT:      frontend-team
+ * TRACE:      AUTH-789
+ * CONTEXT:    Validates user authentication token and refreshes if expired
+ * REASON:     Centralized auth validation prevents token expiry issues across components
+ * CHANGE:     Added automatic refresh logic to prevent user logout interruptions
+ * PREVENTION: Must handle network failures gracefully, validate token format before API calls
+ * RISK:       Medium - Failed validation could expose unauthorized access or crash the app
+ */
+async function validateUserToken(token) {
+    // implementación aquí
+}
+```
+
+### Para Clases:
+```javascript
+/**
+ * AGENT:      data-layer
+ * TRACE:      DB-342
+ * CONTEXT:    Database connection pool manager for optimized query performance
+ * REASON:     Connection pooling reduces overhead and improves response times
+ * CHANGE:     Initial implementation.
+ * PREVENTION: Monitor pool size limits, implement proper connection cleanup
+ * RISK:       High - Pool exhaustion could crash the application under load
+ */
+class DatabasePool {
+    // implementación aquí
+}
+```
+
+### Para Bloques de Código Complejos:
+```javascript
+/**
+ * AGENT:      performance-team
+ * TRACE:      PERF-156
+ * CONTEXT:    Image optimization and lazy loading implementation
+ * REASON:     Reduces initial page load time and improves user experience
+ * CHANGE:     Replaced eager loading with intersection observer pattern
+ * PREVENTION: Ensure fallback for browsers without IntersectionObserver support
+ * RISK:       Low - Images might not load on older browsers without polyfill
+ */
+if ('IntersectionObserver' in window) {
+    // lazy loading logic
+} else {
+    // fallback implementation
+}
+```
+
+### Para Módulos/Archivos:
+```javascript
+/**
+ * AGENT:      security-team
+ * TRACE:      SEC-234
+ * CONTEXT:    Input sanitization utilities for preventing XSS attacks
+ * REASON:     Centralized sanitization ensures consistent security across the app
+ * CHANGE:     Initial implementation.
+ * PREVENTION: Regularly update sanitization rules, test against new attack vectors
+ * RISK:       High - Inadequate sanitization could expose users to XSS vulnerabilities
+ */
+
+// resto del módulo aquí
+```
+
+## **Adaptaciones Específicas para JavaScript:**
+
+1. **Usar JSDoc compatible**: El formato sigue las convenciones de JSDoc para mejor integración con herramientas de documentación.
+
+2. **Módulos ES6**: Para imports/exports, coloca el comentario al inicio del archivo.
+
+3. **Arrow Functions**: También requieren el bloque de comentario antes de la declaración.
+
+4. **Async/Await**: Menciona en CONTEXT si la función es asíncrona y por qué.
+
+5. **Event Handlers**: Especifica en CONTEXT qué eventos maneja y su propósito.
+
