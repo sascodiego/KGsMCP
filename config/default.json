@@ -1,0 +1,95 @@
+{
+  "kuzu": {
+    "databasePath": ".kg-context/knowledge-graph.kuzu",
+    "maxConnections": 10,
+    "queryTimeout": 30000,
+    "enableWAL": true,
+    "bufferPoolSize": "256MB",
+    "maxRetries": 3,
+    "retryDelay": 1000,
+    "healthCheckInterval": 30000
+  },
+  "logging": {
+    "enabled": true,
+    "level": "info"
+  },
+  "analysis": {
+    "maxFileSize": 1048576,
+    "excludedDirs": [
+      ".git",
+      "node_modules",
+      "__pycache__",
+      ".venv",
+      "dist",
+      "build",
+      ".next",
+      ".nuxt",
+      "target",
+      "bin",
+      "obj"
+    ],
+    "includedExtensions": [
+      ".js",
+      ".ts",
+      ".jsx",
+      ".tsx",
+      ".py",
+      ".java",
+      ".go",
+      ".rs",
+      ".php",
+      ".rb",
+      ".cs",
+      ".cpp",
+      ".c",
+      ".h"
+    ]
+  },
+  "patterns": {
+    "confidence_threshold": 0.6,
+    "max_patterns_per_file": 10
+  },
+  "validation": {
+    "enabled": true,
+    "strictMode": false,
+    "enableLogging": true,
+    "enableSanitization": true,
+    "enableASTValidation": true,
+    "enableSecurityAnalysis": true,
+    "enablePerformanceValidation": true,
+    "maxStringLength": 100000,
+    "maxArrayLength": 10000,
+    "maxObjectDepth": 10,
+    "maxObjectKeys": 1000,
+    "rateLimiting": {
+      "enabled": false,
+      "maxRequestsPerMinute": 100,
+      "maxRequestsPerHour": 1000
+    },
+    "performance": {
+      "enableCaching": true,
+      "cacheSize": 1000,
+      "cacheTTL": 300000,
+      "enableBatching": true,
+      "batchSize": 10,
+      "batchTimeout": 100,
+      "slowValidationThreshold": 1000
+    },
+    "monitoring": {
+      "enableRealTimeMonitoring": true,
+      "enableAlerting": true,
+      "enableMetricsCollection": true,
+      "metricsRetentionPeriod": 86400000,
+      "alertThresholds": {
+        "errorRate": 10,
+        "avgResponseTime": 2000,
+        "securityThreatCount": 5,
+        "memoryUsage": 80
+      }
+    }
+  },
+  "mcp": {
+    "serverName": "mcp-vibe-coding-kg",
+    "serverVersion": "1.0.0"
+  }
+}

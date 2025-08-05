@@ -1,0 +1,88 @@
+{
+  "name": "@mcp/vibe-coding-kg",
+  "version": "1.0.0",
+  "description": "MCP server for Vibe Coding with Knowledge Graph integration",
+  "main": "index.js",
+  "type": "module",
+  "bin": {
+    "mcp-vibe-coding": "./index.js"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --inspect index.js",
+    "setup": "node scripts/setup.js",
+    "init-kg": "node scripts/init-kg.js",
+    "test": "node tests/run-tests.js --unit --integration",
+    "test:all": "node tests/run-tests.js --all",
+    "test:unit": "node tests/run-tests.js --unit",
+    "test:integration": "node tests/run-tests.js --integration",
+    "test:performance": "node tests/run-tests.js --performance",
+    "test:security": "node tests/run-tests.js --security",
+    "test:e2e": "node tests/run-tests.js --e2e",
+    "test:watch": "jest --watch",
+    "test:coverage": "node tests/run-tests.js --all --coverage",
+    "test:ci": "node tests/run-tests.js --all --coverage --continue-on-failure",
+    "lint": "eslint src/ --fix",
+    "lint:check": "eslint src/",
+    "format": "prettier --write \"src/**/*.js\"",
+    "format:check": "prettier --check \"src/**/*.js\"",
+    "clean": "rm -rf .kg-context node_modules/.cache tests/temp tests/coverage",
+    "backup": "node scripts/backup.js",
+    "restore": "node scripts/restore.js",
+    "health": "node scripts/health-check.js",
+    "build": "echo 'No build step required for Node.js'",
+    "postinstall": "node scripts/post-install.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.5.0",
+    "kuzu": "^0.10.1",
+    "@babel/parser": "^7.23.0",
+    "@babel/traverse": "^7.23.0",
+    "simple-git": "^3.20.0",
+    "glob": "^10.3.10",
+    "chalk": "^5.3.0",
+    "commander": "^11.1.0",
+    "dotenv": "^16.3.1",
+    "winston": "^3.11.0",
+    "joi": "^17.11.0",
+    "ora": "^7.0.1",
+    "inquirer": "^9.2.12",
+    "fast-glob": "^3.3.2",
+    "acorn": "^8.11.2",
+    "acorn-walk": "^8.3.0",
+    "tar": "^6.2.0",
+    "node-stream-zip": "^1.15.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "eslint": "^8.55.0",
+    "prettier": "^3.1.0",
+    "@types/node": "^20.10.4",
+    "supertest": "^6.3.3",
+    "nodemon": "^3.0.2",
+    "@jest/globals": "^29.7.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-jest": "^27.6.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "knowledge-graph",
+    "vibe-coding",
+    "ai-assisted-development",
+    "arduino",
+    "cpp",
+    "embedded",
+    "hardware"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/mcp-vibe-coding-kg"
+  }
+}
