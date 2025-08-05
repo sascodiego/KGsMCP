@@ -1,5 +1,9 @@
 # MCP Vibe Coding Knowledge Graph
 
+> ⚠️ **ALPHA SOFTWARE - NOT TESTED IN PRODUCTION**
+> 
+> This system is in early development phase and has not been thoroughly tested in production environments. Use at your own risk and always maintain proper backups of your code and data.
+
 A comprehensive Model Context Protocol (MCP) server that integrates Vibe Coding methodology with Knowledge Graph technology for AI-assisted software development using Kuzu embedded database.
 
 ## 🚀 Features
